@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniPortal - Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <nav class="sidebar">
+        <div class="logo">UniPortal</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">My Grades</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="header"><h1>Student Dashboard</h1></div>
+
+        <div class="profile-card">
+            <div class="profile-info">
+                <h2 id="studentName">Loading...</h2>
+                <p>ID: <span id="studentId">...</span> | Major: CS</p>
+            </div>
+            <div class="credits-box">
+                <strong>Credits: </strong> <span id="creditCount">0</span>
+            </div>
+        </div>
+
+        <h3>Current Schedule</h3>
+        <div class="data-table">
+            <table>
+                <thead>
+                    <tr><th>Code</th><th>Name</th><th>Instructor</th><th>Credits</th></tr>
+                </thead>
+                <tbody id="courseTable"></tbody>
+            </table>
+        </div>
+
+        <h3>Tuition & Fees Calculation</h3>
+        <div class="billing-section">
+            <div class="billing-form">
+                <div class="form-group">
+                    <label>Semester Parking Pass ($150)</label>
+                    <input type="number" id="parkingInput" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Gym Access Month ($50)</label>
+                    <input type="number" id="gymInput" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Alumni Donation</label>
+                    <input type="number" id="donationInput" value="0" min="0">
+                </div>
+                <button class="btn-primary" onclick="calculateBill()">Update Invoice</button>
+            </div>
+
+            <div class="bill-summary">
+                <div class="bill-row">
+                    <span>Base Tuition</span><span id="tuitionCost">$0.00</span>
+                </div>
+                <div class="bill-row">
+                    <span>Add-ons</span><span id="parkingCost">$0.00</span>
+                </div>
+                <div class="total-row" id="totalBox">
+                    <span id="totalCost">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

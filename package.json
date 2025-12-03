@@ -1,0 +1,13 @@
+{
+  "name": "uniportal-system",
+  "version": "2.1.0",
+  "description": "CWE-682 Demo with Real-time UI Updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2"
+  }
+}
